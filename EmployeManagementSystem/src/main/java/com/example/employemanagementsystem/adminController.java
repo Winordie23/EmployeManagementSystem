@@ -3,20 +3,28 @@ package com.example.employemanagementsystem;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.awt.*;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.io.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class adminController {
+    DatabaseConnection dbc = new DatabaseConnection();
+    Connection con = dbc.connectionMethod();
+
 public FileChooser fillChooser;
 public File seletedPic;
 public Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -107,7 +115,17 @@ seletedPic = fillChooser.showOpenDialog(null);
 
     @FXML
     void insertInfo(ActionEvent event) {
+String insertion = "insert into empinfo(EmpId,Name,Department,Division,GP) values('"+empid.getText()+"','"+name.getText()+"','"+department.getText()+"','"+division.getText()+"','"+grossPayment.getText()+"')";
 
+
+        try{
+            ResultSet pst = con.createStatement().executeQuery(insertion);
+   while(pst.next())   {
+alert.setContentText("insertion successfull");
+alert.showAndWait();}
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -128,6 +146,15 @@ seletedPic = fillChooser.showOpenDialog(null);
     @FXML
     void updateInfo(ActionEvent event) {
 
+    }
+    @FXML
+    void startMessage(ActionEvent event) throws IOException {
+        FXMLLoader fxml = new FXMLLoader(HelloApplication.class.getResource("message.fxml"));
+        Scene sc = new Scene(fxml.load(),980,620);
+        Stage st = (Stage)((Node)event.getSource()).getScene().getWindow();
+        st.setScene(sc);
+        st.setTitle("Employee Management System");
+        st.show();
     }
 
 }

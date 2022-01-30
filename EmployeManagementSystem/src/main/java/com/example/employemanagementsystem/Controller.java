@@ -42,7 +42,7 @@ private Button applybtn;
     public void login(ActionEvent event) throws IOException {
         if((usernamefield.getText().equals("yeab"))&&(passwordfield.getText().equals("1234"))){
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 819, 551);
+            Scene scene = new Scene(fxmlLoader.load(), 980, 620);
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
             window.setTitle("Employee Management System");
             window.setScene(scene);

@@ -19,6 +19,7 @@ import java.sql.SQLException;
 
 public class ApplyController {
 DatabaseConnection dbc = new DatabaseConnection();
+    Connection c = dbc.connectionMethod();
     @FXML
     private TextField age;
 
@@ -56,10 +57,7 @@ public void cancelmethod(){
     email.setText("");
     fullname.setText("");
     phoneno.setText("");
-   /* age.setText("");
-    age.setText("");*/
-
-}
+  }
 
 public void backBtn(ActionEvent event) throws IOException {
     FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
@@ -68,24 +66,24 @@ public void backBtn(ActionEvent event) throws IOException {
     window.setTitle("Employee Management System");
     window.setScene(scene);
     window.show();
-
 }
 
 public void submitclicked() throws SQLException {
-    Connection c = null;
-    String query = "insert into APPLICNTS(FULLNAME,AGE,SEX,PHONEN,EMAIL,APPAREA)values(?,?,?,?,?,?)";
+
+    String query = "insert into APPLICNTST(FULLNAME,AGE,SEX,PHONEN,EMAIL,APPAREA)values(?,?,?,?,?,?)";
     PreparedStatement pst = c.prepareStatement(query);
     try{
-        pst.setString(1,fullname.getText());
+               pst.setString(1,fullname.getText());
         pst.setString(2,age.getText());
         pst.setString(3,sex.getSelectedToggle().toString());
         pst.setString(4,phoneno.getText());
         pst.setString(5,email.getText());
         pst.setString(6,applearea.getText());
+        pst.executeUpdate();
         JOptionPane.showMessageDialog(null,"Successfully registerd!!!");
     }
     catch(Exception e){
-
+e.printStackTrace();
     }
 }
 
