@@ -115,7 +115,7 @@ seletedPic = fillChooser.showOpenDialog(null);
 
     @FXML
     void insertInfo(ActionEvent event) {
-String insertion = "insert into empinfo(EmpId,Name,Department,Division,GP) values('"+empid.getText()+"','"+name.getText()+"','"+department.getText()+"','"+division.getText()+"','"+grossPayment.getText()+"')";
+String insertion = "insert into EMPLOYEEINFO(EmpId,Name,Department,Division,GP) values('"+empid.getText()+"','"+name.getText()+"','"+department.getText()+"','"+division.getText()+"','"+grossPayment.getText()+"')";
 
 
         try{

@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<SplitPane fx:id="splitPane" dividerPositions="0.4861111111111111" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employemanagementsystem.Controller">
+<SplitPane fx:id="splitPane" dividerPositions="0.4861111111111111" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employemanagementsystem.Controller">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: orange;">
          <children>
@@ -75,6 +68,19 @@
                      <font>
                         <Font name="Agency FB Bold" size="14.0" />
                      </font></CheckBox>
+                  <RadioButton fx:id="adm" layoutX="65.0" layoutY="145.0" mnemonicParsing="false" onDragDetected="#tips" text="Admin">
+                     <font>
+                        <Font name="Agency FB Bold" size="18.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="tgl" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="emp" layoutX="161.0" layoutY="145.0" mnemonicParsing="false" text="User" toggleGroup="$tgl">
+                     <font>
+                        <Font name="Agency FB Bold" size="18.0" />
+                     </font>
+                  </RadioButton>
                </children>
             </Pane>
             <Label layoutX="162.0" layoutY="55.0" text="Login">

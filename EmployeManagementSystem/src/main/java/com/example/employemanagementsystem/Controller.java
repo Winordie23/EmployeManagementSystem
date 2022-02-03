@@ -6,15 +6,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Controller {
 
@@ -29,6 +29,8 @@ public class Controller {
 */
 @FXML
 private Button applybtn;
+DatabaseConnection dbc = new DatabaseConnection();
+Connection con = dbc.connectionMethod();
 
     @FXML
     private TextField usernamefield;
@@ -39,19 +41,70 @@ private Button applybtn;
     @FXML
     private CheckBox showCombo;
 
-    public void login(ActionEvent event) throws IOException {
-        if((usernamefield.getText().equals("yeab"))&&(passwordfield.getText().equals("1234"))){
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 980, 620);
-            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-            window.setTitle("Employee Management System");
-            window.setScene(scene);
-            window.show();
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Wrong username or password");
+    @FXML
+    private RadioButton adm;
 
-        }
+    @FXML
+    private RadioButton emp;
+    @FXML
+    private ToggleGroup tgl;
+
+
+    public void tips(){
+        adm.setTooltip(new Tooltip("select to login as admin"));
+        emp.setTooltip(new Tooltip("select to login as admin"));
+    }
+    public void login(ActionEvent event) throws Exception {
+        String se= null;
+
+       if(adm.isSelected()) {
+           se = "select * from ADMIN where NAME ='" + usernamefield.getText() + "'";
+           try {
+               ResultSet res = con.createStatement().executeQuery(se);
+               while (res.next()){
+                   if (passwordfield.getText().equals(res.getString(2))) {
+                       FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin.fxml"));
+                       Scene scene = new Scene(fxmlLoader.load(), 980, 620);
+                       Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                       window.setTitle("Employee Management System");
+                       window.setScene(scene);
+                       window.show();
+
+                   }
+                   else {
+                       JOptionPane.showMessageDialog(null, "Wrong password");
+                   }
+               }
+           }
+           catch (Exception e){
+               JOptionPane.showMessageDialog(null,"invalid username");
+           }
+       }
+       else if(emp.isSelected()){
+           se = "select USERNAME,PASSWORD from EMPLOYEEINFO where USERNAME ='" + usernamefield.getText() + "'";
+           try {
+               ResultSet res = con.createStatement().executeQuery(se);
+               while (res.next()){
+                   if (passwordfield.getText().equals(res.getString(2))) {
+                       FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("empPage.fxml"));
+                       Scene scene = new Scene(fxmlLoader.load(), 980, 620);
+                       Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                       window.setTitle("Employee Management System");
+                       window.setScene(scene);
+                       window.show();
+
+                   }
+                   else {
+                       JOptionPane.showMessageDialog(null, "Wrong password");
+                   }
+               }
+           }
+           catch (Exception e){
+               JOptionPane.showMessageDialog(null,"invalid username");
+           }
+       }
+
+
     }
     public void show(){
         String pass = passwordfield.getText();
@@ -75,4 +128,5 @@ private Button applybtn;
 public void submitClicked(){
 
 }
+
 }
