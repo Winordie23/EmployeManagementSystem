@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="621.0" prefWidth="984.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employemanagementsystem.EmpController">
+   <children>
+      <Pane prefHeight="621.0" prefWidth="984.0" styleClass="iv" stylesheets="@style.css">
+         <children>
+            <Label layoutX="222.0" layoutY="25.0" style="-fx-background-color: lightblue;" text="Empeloyee Work Space">
+               <font>
+                  <Font name="Agency FB Bold" size="63.0" />
+               </font>
+            </Label>
+            <SplitPane dividerPositions="0.504054054054054" layoutX="8.0" layoutY="140.0" prefHeight="456.0" prefWidth="778.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Label layoutX="113.0" layoutY="20.0" prefHeight="34.0" prefWidth="145.0" style="-fx-background-color: lightblue;" text="Engaged projects">
+                           <font>
+                              <Font name="Agency FB Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="engagedtbl" layoutX="20.0" layoutY="70.0" prefHeight="185.0" prefWidth="331.0">
+                          <columns>
+                            <TableColumn fx:id="titleC" prefWidth="127.0" text="Title" />
+                            <TableColumn fx:id="startdate" prefWidth="105.0" text="starting date" />
+                              <TableColumn fx:id="enddate" prefWidth="98.0" text="Ending date" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="72.0" layoutY="366.0" text="Participate in">
+                           <font>
+                              <Font name="Agency FB Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="partCombo" layoutX="186.0" layoutY="364.0" prefWidth="150.0" />
+                        <Button fx:id="submit" layoutX="298.0" layoutY="395.0" mnemonicParsing="false" onAction="#submitPart" text="submit" />
+                        <TextArea fx:id="descArea" layoutX="122.0" layoutY="282.0" prefHeight="70.0" prefWidth="262.0" style="-fx-region-border: bold; -fx-border-color: blue; -fx-border-width: 10; -fx-border-radius: pxs;" />
+                        <Label layoutX="6.0" layoutY="295.0" text="Short description">
+                           <font>
+                              <Font name="Agency FB Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="454.0" prefWidth="379.0">
+                     <children>
+                        <Label layoutX="126.0" layoutY="21.0" prefHeight="40.0" prefWidth="145.0" style="-fx-background-color: lightblue;" text="Ongoing projects">
+                           <font>
+                              <Font name="Agency FB Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="ongoiingtbl" layoutX="14.0" layoutY="78.0" prefHeight="133.0" prefWidth="360.0">
+                           <columns>
+                              <TableColumn fx:id="TITLE" prefWidth="147.0" text="Title" />
+                              <TableColumn fx:id="STDATE" prefWidth="103.0" text="starting date" />
+                              <TableColumn fx:id="ENDATE" prefWidth="109.0" text="Ending date" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+            <Hyperlink fx:id="chatEmp" layoutX="836.0" layoutY="162.0" onAction="#chatWzEmp" stylesheets="@style.css" text="Chat with employee" textFill="#c94040">
+               <font>
+                  <Font name="Agency FB Bold" size="18.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="rad" />
+                  <String fx:value="iv" />
+               </styleClass>
+            </Hyperlink>
+            <Hyperlink fx:id="talkboss" layoutX="836.0" layoutY="220.0" onAction="#callBoss" prefHeight="30.0" prefWidth="98.0" stylesheets="@style.css" text="Talk to boss" textFill="#b52727">
+               <font>
+                  <Font name="Agency FB Bold" size="18.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="rad" />
+                  <String fx:value="iv" />
+               </styleClass>
+            </Hyperlink>
+            <Hyperlink fx:id="group" layoutX="839.0" layoutY="281.0" onAction="#groupchat" prefHeight="30.0" prefWidth="98.0" stylesheets="@style.css" text="Join group" textFill="#c93939">
+               <font>
+                  <Font name="Agency FB Bold" size="18.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="rad" />
+                  <String fx:value="iv" />
+               </styleClass>
+            </Hyperlink>
+            <Hyperlink fx:id="shareFiles" layoutX="843.0" layoutY="338.0" onAction="#sendfiles" prefHeight="30.0" prefWidth="98.0" styleClass="rad" stylesheets="@style.css" text="share files" textFill="#ae3333">
+               <font>
+                  <Font name="Agency FB Bold" size="18.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink fx:id="logout" layoutX="32.0" layoutY="41.0" onAction="#Logout" style="-fx-background-color: red;" text="Logout" textFill="#e4dfdf">
+               <font>
+                  <Font name="Agency FB Bold" size="18.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

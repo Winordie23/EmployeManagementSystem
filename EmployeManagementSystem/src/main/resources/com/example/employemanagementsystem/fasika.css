@@ -1,0 +1,38 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+ .mainFxmlClass {
+
+    -fx-background-color:linear-gradient(to bottom right, #FFFF00, #662d60);
+    
+}
+
+.exit{
+    
+    -fx-background-color:#c22c40;
+    -fx-background-radius:5px;
+    -fx-cursor:hand;
+
+}
+
+.textfield-design{
+    
+    -fx-background-color:transparent;
+    -fx-background-radius:10px;
+    -fx-border-color:linear-gradient(to bottom right,#2f466b, #662d60);
+    -fx-background-radius:10px;
+    -fx-text-inner-color:#000;
+}
+
+.button-design{
+    -fx-background-color:linear-gradient(to bottom right,#FFFF00, #662d60);
+    -fx-background-radius:20px;
+    -fx-cursor:hand;
+    
+}
+Button:hover{
+-fx-background-color:linear-gradient(to bottom right,#FFFF00, #662d60);
+    -fx-background-radius:30px;
+    -fx-cursor:hand;
+}

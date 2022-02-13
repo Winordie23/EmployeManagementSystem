@@ -1,0 +1,46 @@
+.bg{
+-fx-background-image: url('bg1.jpg') no-repeat;
+ -fx-background-size: cover;
+}
+.titlestyle{
+-fx-border-radius: 76px 76px 76px 76px;
+-fx-moz-border-radius: 76px 76px 76px 76px;
+-fx--webkit-border-radius: 76px 76px 76px 76px;
+-fx-border: 0px solid #000000;
+-fx-background-color: green;
+
+  -fx-color: white;
+}
+.login{
+-fx-background-image: url('log.jpg') no-repeat;
+ -fx-background-size: cover;
+
+}
+.apbg{
+-fx-background-image: url('apply.jpg') no-repeat;
+ -fx-background-size: cover;
+-fx-background-radius:20px;
+}
+.adm{
+-fx-background-image: url('adminOffice.jpg') no-repeat;
+ -fx-background-size: cover;
+}
+.trans{
+-fx-background-color: lightblue;
+ -fx-opacity: 0.2;}
+.iv{
+   -fx-background-color: linear-gradient(to top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+.rad{
+-fx-background-radius:20px;
+-fx-background-color: linear-gradient(to left top, #f2840e, #e79c00, #d8b200, #c5c702, #aeda31);
+}
+.send{
+-fx-background-image: url('send.jpg') no-repeat;
+ -fx-background-size: cover;
+}
+.button-design{
+    -fx-background-color: linear-gradient(to top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    -fx-background-radius:20px;
+    -fx-cursor:hand;
+}

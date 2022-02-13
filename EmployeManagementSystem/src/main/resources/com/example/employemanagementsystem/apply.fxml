@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="548.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employemanagementsystem.ApplyController">
+   <children>
+      <Pane layoutY="-1.0" prefHeight="548.0" prefWidth="814.0" styleClass="iv" stylesheets="@style.css">
+         <children>
+            <Pane layoutX="24.0" layoutY="78.0" prefHeight="398.0" prefWidth="765.0" style="-fx-background-color: white;" stylesheets="@style.css">
+               <children>
+                  <Label layoutX="30.0" layoutY="61.0" styleClass="titlestyle" stylesheets="@style.css" text="Full Name" textFill="#322727">
+                     <font>
+                        <Font name="Agency FB Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="47.0" layoutY="242.0" styleClass="titlestyle" stylesheets="@style.css" text="Phone No." textFill="#252424">
+                     <font>
+                        <Font name="Agency FB Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="45.0" layoutY="177.0" styleClass="titlestyle" stylesheets="@style.css" text="Email" textFill="#252424">
+                     <font>
+                        <Font name="Agency FB Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="433.0" layoutY="84.0" styleClass="titlestyle" stylesheets="@style.css" text="Sex" textFill="#322727">
+                     <font>
+                        <Font name="Agency FB Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="51.0" layoutY="123.0" styleClass="titlestyle" stylesheets="@style.css" text="Age" textFill="#252424">
+                     <font>
+                        <Font name="Agency FB Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="369.0" layoutY="151.0" styleClass="titlestyle" stylesheets="@style.css" text="Graduated in" textFill="#322727">
+                     <font>
+                        <Font name="Agency FB Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="fullname" layoutX="117.0" layoutY="62.0" prefHeight="25.0" prefWidth="169.0" promptText="Enter full name" />
+                  <TextField fx:id="phoneno" layoutX="131.0" layoutY="238.0" prefHeight="25.0" prefWidth="169.0" promptText="phone number">
+                     <font>
+                        <Font name="Agency FB Bold" size="16.0" />
+                     </font></TextField>
+                  <TextField fx:id="email" layoutX="117.0" layoutY="178.0" prefHeight="25.0" prefWidth="169.0" promptText="example@gmail.com" />
+                  <TextField fx:id="age" layoutX="117.0" layoutY="124.0" prefHeight="25.0" prefWidth="63.0" />
+                  <TextField fx:id="applearea" layoutX="505.0" layoutY="148.0" prefHeight="25.0" prefWidth="169.0" promptText="eneter application area hereenter your department here">
+                     <font>
+                        <Font name="Agency FB Bold" size="16.0" />
+                     </font></TextField>
+                  <Button fx:id="submit" layoutX="583.0" layoutY="320.0" mnemonicParsing="false" onAction="#submitclicked" prefHeight="48.0" prefWidth="106.0" styleClass="titlestyle" stylesheets="@style.css" text="Submit" textFill="#eeecec">
+                     <font>
+                        <Font name="Agency FB Bold" size="21.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cancel" layoutX="255.0" layoutY="324.0" mnemonicParsing="false" onAction="#cancelmethod" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: red;" text="Cancel" textFill="#fffdfd">
+                     <font>
+                        <Font name="Agency FB Bold" size="21.0" />
+                     </font>
+                  </Button>
+                  <RadioButton fx:id="maleradio" layoutX="488.0" layoutY="86.0" mnemonicParsing="false" stylesheets="@style.css" text="Male" textFill="#322727">
+                     <font>
+                        <Font name="Agency FB Bold" size="15.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="sex" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="femaleradio" layoutX="573.0" layoutY="87.0" mnemonicParsing="false" stylesheets="@style.css" text="Female" textFill="#322727" toggleGroup="$sex">
+                     <font>
+                        <Font name="Agency FB Bold" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <Label layoutX="423.0" layoutY="206.0" styleClass="titlestyle" stylesheets="@style.css" text="GPA" textFill="#1e1b1b">
+                     <font>
+                        <Font name="Agency FB Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="gradfield" layoutX="505.0" layoutY="204.0" prefHeight="25.0" prefWidth="169.0" promptText="enter your GPA here">
+                     <font>
+                        <Font name="Agency FB Bold" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="217.0" layoutY="-34.0" prefHeight="71.0" prefWidth="345.0" styleClass="titlestyle" stylesheets="@style.css" text="Application form" textFill="#281717">
+                     <font>
+                        <Font name="Agency FB Bold" size="58.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button fx:id="back" layoutX="16.0" layoutY="484.0" mnemonicParsing="false" onAction="#backBtn" prefHeight="16.0" prefWidth="81.0" style="-fx-background-color: lightblue;" text="Back">
+               <font>
+                  <Font name="Agency FB Bold" size="22.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

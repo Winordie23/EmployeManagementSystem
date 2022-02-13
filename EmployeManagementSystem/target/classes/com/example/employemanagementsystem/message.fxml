@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employemanagementsystem.messageController">
+   <children>
+      <Pane prefHeight="620.0" prefWidth="980.0" styleClass="iv" stylesheets="@style.css">
+         <children>
+            <Label layoutX="108.0" layoutY="22.0" prefHeight="83.0" prefWidth="789.0" style="-fx-background-color: purple;" text="Vaccancy, Broadcast and Message" textFill="#e4dbdb">
+               <font>
+                  <Font name="Agency FB Bold" size="67.0" />
+               </font>
+            </Label>
+            <SplitPane dividerPositions="0.5006535947712418" layoutX="48.0" layoutY="161.0" prefHeight="353.0" prefWidth="868.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightblue;">
+                     <children>
+                        <TextArea fx:id="VacancyArea" layoutX="43.0" layoutY="79.0" prefHeight="216.0" prefWidth="346.0" promptText="Enter vacancy area">
+                           <font>
+                              <Font name="Agency FB Bold" size="15.0" />
+                           </font>
+                        </TextArea>
+                        <Button fx:id="publsihBtn" layoutX="329.0" layoutY="302.0" mnemonicParsing="false" onAction="#announce" text="Publish">
+                           <font>
+                              <Font name="Agency FB Bold" size="19.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="107.0" layoutY="24.0" text="Announce Vacancy">
+                           <font>
+                              <Font name="Agency FB Bold" size="35.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="345.0" prefWidth="413.0" style="-fx-background-color: lightblue;">
+                     <children>
+                        <Label layoutX="48.0" layoutY="62.0" text="Message To">
+                           <font>
+                              <Font name="Agency FB Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="sendtoCombo" layoutX="136.0" layoutY="59.0" prefWidth="150.0" />
+                        <Button fx:id="Start" layoutX="320.0" layoutY="52.0" mnemonicParsing="false" onAction="#startChat" text="start">
+                           <font>
+                              <Font name="Agency FB Bold" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="multiStart" layoutX="59.0" layoutY="287.0" mnemonicParsing="false" text="Multiplechat">
+                           <font>
+                              <Font name="Agency FB Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="messageList" layoutX="25.0" layoutY="140.0" prefHeight="132.0" prefWidth="150.0" />
+                        <Button fx:id="multiStart1" layoutX="271.0" layoutY="159.0" mnemonicParsing="false" text="Chat with all">
+                           <font>
+                              <Font name="Agency FB Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
