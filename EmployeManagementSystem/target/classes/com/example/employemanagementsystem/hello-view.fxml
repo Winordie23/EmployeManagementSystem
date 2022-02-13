@@ -1,93 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<SplitPane fx:id="splitPane" dividerPositions="0.4861111111111111" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employemanagementsystem.Controller">
+<SplitPane fx:id="splitPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employemanagementsystem.Controller">
   <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: orange;">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="iv" stylesheets="@style.css">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="86.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@EMSpic.jpg" />
-               </image>
-            </ImageView>
-            <Label layoutX="21.0" layoutY="257.0" text="Employee Management System" textFill="#4105f5">
-               <font>
-                  <Font name="Agency FB Bold" size="34.0" />
-               </font>
-            </Label>
-            <Label fx:id="applyLabel" layoutX="37.0" layoutY="495.0" onMouseClicked="#apply" textFill="#1f33e8">
-               <font>
-                  <Font name="Agency FB Bold" size="16.0" />
-               </font>
-            </Label>
-            <Button fx:id="applybtn" layoutX="48.0" layoutY="478.0" mnemonicParsing="false" onAction="#apply" prefHeight="28.0" prefWidth="108.0" style="-fx-background-color: orange;" text="Apply for Job" textFill="#f5f2f2">
-               <font>
-                  <Font name="Agency FB Bold" size="15.0" />
-               </font>
-            </Button>
-         </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: orange;">
-         <children>
-            <Pane layoutX="80.0" layoutY="116.0" prefHeight="373.0" prefWidth="268.0" style="-fx-background-color: lightblue;">
+            <Pane layoutX="210.0" layoutY="133.0" prefHeight="382.0" prefWidth="350.0" styleClass="login" stylesheets="@style.css">
                <children>
-                  <ImageView fitHeight="103.0" fitWidth="114.0" layoutX="80.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="88.0" fitWidth="108.0" layoutX="137.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@loginpic.jpg" />
+                        <Image url="@lllll.jpg" />
                      </image>
                   </ImageView>
-                  <Label layoutX="24.0" layoutY="178.0" text="User Name">
+                  <Label layoutX="28.0" layoutY="158.0" text="User Name" textFill="#f2ecec">
                      <font>
-                        <Font name="Agency FB Bold" size="14.0" />
+                        <Font name="Agency FB Bold" size="20.0" />
                      </font></Label>
-                  <Label layoutX="28.0" layoutY="228.0" text="Password">
+                  <Label layoutX="32.0" layoutY="208.0" text="Password" textFill="#ebdede">
                      <font>
-                        <Font name="Agency FB Bold" size="15.0" />
+                        <Font name="Agency FB Bold" size="20.0" />
                      </font></Label>
-                  <Label layoutX="24.0" layoutY="342.0" text="forgot password">
+                  <Label layoutX="23.0" layoutY="334.0" prefHeight="24.0" prefWidth="116.0" text="forgot password" textFill="#e1d8d8">
                      <font>
-                        <Font name="Agency FB Bold" size="15.0" />
+                        <Font name="Agency FB Bold" size="20.0" />
                      </font></Label>
                   <Label layoutX="195.0" layoutY="245.0" />
-                  <Button fx:id="loginbtn" layoutX="183.0" layoutY="287.0" mnemonicParsing="false" onAction="#login" text="Login">
+                  <Button fx:id="loginbtn" layoutX="247.0" layoutY="286.0" mnemonicParsing="false" onAction="#login" prefHeight="38.0" prefWidth="75.0" styleClass="button-design" text="Login" textFill="#f8f3f3">
                      <font>
-                        <Font name="Agency FB Bold" size="15.0" />
+                        <Font name="Agency FB Bold" size="20.0" />
                      </font></Button>
-                  <TextField fx:id="usernamefield" layoutX="90.0" layoutY="174.0" prefHeight="28.0" prefWidth="153.0" promptText="enter user name here">
+                  <TextField fx:id="usernamefield" layoutX="116.0" layoutY="157.0" prefHeight="28.0" prefWidth="153.0" promptText="enter user name here">
                      <font>
-                        <Font name="Agency FB Bold" size="15.0" />
+                        <Font name="Agency FB Bold" size="20.0" />
                      </font></TextField>
-                  <PasswordField fx:id="passwordfield" layoutX="90.0" layoutY="223.0" prefHeight="28.0" prefWidth="153.0" promptText="enter the password here">
+                  <PasswordField fx:id="passwordfield" layoutX="119.0" layoutY="203.0" prefHeight="28.0" prefWidth="153.0" promptText="enter the password here">
                      <font>
-                        <Font name="Agency FB Bold" size="15.0" />
+                        <Font name="Agency FB Bold" size="20.0" />
                      </font></PasswordField>
-                  <CheckBox fx:id="showCombo" layoutX="154.0" layoutY="254.0" mnemonicParsing="false" onAction="#show" text="Show Password">
+                  <CheckBox fx:id="showCombo" layoutX="177.0" layoutY="252.0" mnemonicParsing="false" onAction="#show" text="Show Password" textFill="#e1d8d8">
                      <font>
-                        <Font name="Agency FB Bold" size="14.0" />
+                        <Font name="Agency FB Bold" size="20.0" />
                      </font></CheckBox>
-                  <RadioButton fx:id="adm" layoutX="65.0" layoutY="145.0" mnemonicParsing="false" onDragDetected="#tips" text="Admin">
-                     <font>
-                        <Font name="Agency FB Bold" size="18.0" />
-                     </font>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="tgl" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton fx:id="emp" layoutX="161.0" layoutY="145.0" mnemonicParsing="false" text="User" toggleGroup="$tgl">
-                     <font>
-                        <Font name="Agency FB Bold" size="18.0" />
-                     </font>
-                  </RadioButton>
                </children>
             </Pane>
-            <Label layoutX="162.0" layoutY="55.0" text="Login">
+            <Label layoutX="51.0" layoutY="12.0" prefHeight="88.0" prefWidth="715.0" style="-fx-background-color: #33c933;" stylesheets="@style.css" text="Employee Management System" textFill="#1d1e1d">
                <font>
-                  <Font name="Agency FB Bold" size="43.0" />
+                  <Font name="Agency FB Bold" size="65.0" />
                </font>
             </Label>
+            <Button fx:id="applybtn" layoutX="57.0" layoutY="449.0" mnemonicParsing="false" onAction="#apply" prefHeight="33.0" prefWidth="75.0" styleClass="button-design" text="Apply" textFill="#e4dbdb">
+               <font>
+                  <Font name="Agency FB Bold" size="17.0" />
+               </font>
+            </Button>
          </children></AnchorPane>
   </items>
 </SplitPane>
